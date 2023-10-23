@@ -1,9 +1,11 @@
 <%= form_with(model: @post, local: true) do |form| %>
-
+  <!-- Conditional statement to display errors -->
   <% if @post.errors.any? %>
     <div id="error_explanation">
+      <!-- If there are errors, display the following -->
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
       <ul>
+        <!-- Iterate through each error and display it -->
         <% @post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
